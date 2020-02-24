@@ -2,8 +2,8 @@ CREATE TABLE Restuarant
 (
     id SERIAL PRIMARY KEY,
     estName VARCHAR,
-    distance NUMERIC(10,2),
-    rating NUMERIC(1,1),
+    distance INT,
+    rating INT,
     category VARCHAR,
     favorites VARCHAR,
     delivery VARCHAR,
