@@ -18,6 +18,17 @@ class RestaurantModel {
       return error;
     }
   }
+  static async getById(id) {
+    try {
+      const res = await db.any(`SELECT *
+      FROM restaurantv2
+      WHERE restaurantv2.id = ${id};`);
+      console.log(res);
+      return res;
+    } catch (error) {
+      console.error('ERROR: ', error);
+    }
+  }
 }
 
 module.exports = RestaurantModel;
