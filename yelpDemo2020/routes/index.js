@@ -13,4 +13,9 @@ router.get('/', async function(req, res, next) {
   });
 });
 
+router.post('/', function(req, res) {
+  console.log('REQ BODY: ', req.body);
+  res.sendStatus(200);
+});
+
 module.exports = router;
