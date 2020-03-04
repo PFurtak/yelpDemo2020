@@ -29,6 +29,18 @@ class RestaurantModel {
       console.error('ERROR: ', error);
     }
   }
+
+  static async addReview(restaurantid, title, review) {
+    try {
+      const res = await db.one(
+        `INSERT INTO review (reviewerid, restaurantid, title, review) VALUES ($1, $2, $3, $4) RETURNING id`,
+        [2, restaurantid, title, review]
+      );
+    } catch (error) {
+      console.error('ERROR: ', error);
+      return error;
+    }
+  }
 }
 
 module.exports = RestaurantModel;

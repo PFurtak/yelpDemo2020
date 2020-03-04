@@ -13,8 +13,14 @@ router.get('/', async function(req, res, next) {
   });
 });
 
-router.post('/', function(req, res) {
-  console.log('REQ BODY: ', req.body);
+router.post('/', async function(req, res) {
+  const { restaurantid, review_title, review_text } = req.body;
+  const postData = await restaurantModel.addReview(
+    restaurantid,
+    review_title,
+    review_text
+  );
+  console.log(postData);
   res.sendStatus(200);
 });
 
