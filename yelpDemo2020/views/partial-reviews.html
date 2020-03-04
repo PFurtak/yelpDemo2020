@@ -1,0 +1,6 @@
+<ul>
+  ${data.map(entry => `
+  <li>${entry.name}: ${entry.category}</li>
+  <li>${entry.address}</li>
+  ` ).join('')}
+</ul>

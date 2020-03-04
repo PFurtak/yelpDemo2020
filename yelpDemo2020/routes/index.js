@@ -6,10 +6,11 @@ const restaurantModel = require('../models/restaModel');
 router.get('/', async function(req, res, next) {
   const data = await restaurantModel.getAllRestaurants();
   res.render('template', {
-    locals: { title: 'Express', data: data },
+    locals: { title: 'Restaurants', data: data },
     partials: {
       partial: 'partial-index'
     }
   });
 });
+
 module.exports = router;
